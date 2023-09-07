@@ -402,23 +402,29 @@ stock RGBPlayerTextDrawHide(playerid, PlayerText:text) {
 
 public RGBTextdrawsTimer()
 {
-    if(red == 255 && blue == 0 && green != 255) 
+    if(red == 255 && blue == 0 && green != 255) {
     	green += 15;
+    }
     
-    if(red != 0 && blue == 0 && green == 255) 
+    if(red != 0 && blue == 0 && green == 255) {
     	red -= 15;
+    }
     
-    if(red == 0 && blue != 255 && green == 255) 
+    if(red == 0 && blue != 255 && green == 255) {
     	blue += 15;
+    }
     
-    if(red == 0 && blue == 255 && green != 0) 
+    if(red == 0 && blue == 255 && green != 0) {
     	green -= 15;
+    }
     
-    if(red != 255 && blue == 255 && green == 0) 
+    if(red != 255 && blue == 255 && green == 0) {
     	red += 15;
+    }
     
-    if(red == 255 && green == 0 && blue != 0) 
+    if(red == 255 && green == 0 && blue != 0) {
     	blue -= 15;
+    }
 	
 	final_color_hex = red << 24 | green << 16 | blue << 8 | 255;
 
