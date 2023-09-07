@@ -9,7 +9,7 @@
 	-----------------------------------------------------------------------------
 
 	Author:
-		Adib Salehi
+		Adib
 
 	Contact:
 		Telegram:
@@ -26,6 +26,9 @@
 
 	Version:
 		1.0
+
+	Github Repository:
+		https://github.com/adib-yg/SAMP-RGB-Textdraw
 
 	-----------------------------------------------------------------------------
 
@@ -107,7 +110,7 @@
 
 	-----------------------------------------------------------------------------
 
-	Copyright © 2023 Adib Salehi. All rights reserved.
+	Copyright © 2023 Adib. All rights reserved.
 
 */
 
@@ -423,7 +426,7 @@ public RGBTextdrawsTimer()
     if(red == 255 && green == 0 && blue != 0) {
     	blue -= 15;
     }
-    
+
 	
 	final_color_hex = red << 24 | green << 16 | blue << 8 | 255;
 
