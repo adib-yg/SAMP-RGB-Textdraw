@@ -6,7 +6,7 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 ![Alt Text](gif_rgb_textdraw.gif)
 
 # How To Install
-1. Extract the rgb_textdraw.inc into the /pawno/include directory of your SA-MP server.
+1. Extract the rgb_textdraw.inc into the `/pawno/include` directory of your SA-MP server.
 2. Define include in your gamemode script `#include <rgb_textdraw>`
 
 Note: You have to define `#include <YSI_Data\y_iterate>` or `#include <foreach>` for use this include
