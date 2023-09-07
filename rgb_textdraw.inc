@@ -482,7 +482,7 @@ public OnFilterScriptInit()
 		Iter_Init(RGB_PlayerTDs);
 	}
 	#if defined RGBTD_OnFilterScriptInit
-		return RGBTD_OnFilterScriptInit(Args);
+		return RGBTD_OnFilterScriptInit();
 	#else
 		return 1;
 	#endif
@@ -495,7 +495,7 @@ public OnFilterScriptInit()
 
 #define OnFilterScriptInit RGBTD_OnFilterScriptInit
 #if defined RGBTD_OnFilterScriptInit
-	forward RGBTD_OnFilterScriptInit(Args);
+	forward RGBTD_OnFilterScriptInit();
 #endif
 
 //Hook: OnGameModeInit
