@@ -172,7 +172,7 @@ forward RGBTextdrawsTimer();
 
 stock AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false) {
 
-	if (Text: text == INVALID_TEXT_DRAW)
+	if (Text: text == Text: INVALID_TEXT_DRAW)
 		return print("[ERROR] AddRGBToTextDraw(...) Invalid Textdraw ID.");
 
 	if (Iter_Contains(RGB_TDs, _: text))
@@ -197,7 +197,7 @@ stock AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, boo
 
 stock RemoveRGBFromTextDraw(Text:text) {
 
-	if (Text: text == INVALID_TEXT_DRAW)
+	if (Text: text == Text: INVALID_TEXT_DRAW)
 		return print("[ERROR] RemoveRGBFromTextDraw(...) Invalid Textdraw ID.");
 
 	if (!Iter_Contains(RGB_TDs, Text: text))
@@ -238,7 +238,7 @@ stock RGBTextDrawShowForPlayer(playerid, Text:text) {
 	if (!(0 <= playerid < MAX_PLAYERS))
 		return print("[ERROR] RGBTextDrawShowForPlayer(...) Invalid Player ID.");
 
-	if (Text: text == INVALID_TEXT_DRAW)
+	if (Text: text == Text: INVALID_TEXT_DRAW)
 		return print("[ERROR] RGBTextDrawShowForPlayer(...) Invalid Textdraw ID.");
 
 	if (Iter_Contains(RGB_TDs_Show[_: text], playerid))
@@ -283,13 +283,11 @@ stock AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool
 	if (!(0 <= playerid < MAX_PLAYERS))
 		return print("[ERROR] AddRGBToPlayerTextDraw(...) Invalid Player ID.");
 
-	if (_: text == 	
 	#if defined INVALID_PLAYER_TEXT_DRAW
-		INVALID_PLAYER_TEXT_DRAW
+		if (PlayerText: text == PlayerText:INVALID_PLAYER_TEXT_DRAW)
 	#else
-		INVALID_TEXT_DRAW
+		if (PlayerText: text == PlayerText:INVALID_TEXT_DRAW)
 	#endif
-		)
 		return print("[ERROR] AddRGBToPlayerTextDraw(...) Invalid Textdraw ID.");
 
 	if (Iter_Contains(RGB_PlayerTDs[playerid], _: text))
@@ -369,9 +367,9 @@ stock RGBPlayerTextDrawShow(playerid, PlayerText:text) {
 		return print("[ERROR] RGBPlayerTextDrawShow(...) Invalid Player ID.");
 
 	#if defined INVALID_PLAYER_TEXT_DRAW
-		if (PlayerText: text == INVALID_PLAYER_TEXT_DRAW)
+		if (PlayerText: text == PlayerText: INVALID_PLAYER_TEXT_DRAW)
 	#else
-		if (PlayerText: text == INVALID_TEXT_DRAW)
+		if (PlayerText: text == PlayerText: INVALID_TEXT_DRAW)
 	#endif
 		return print("[ERROR] RGBPlayerTextDrawShow(...) Invalid Textdraw ID.");
 
@@ -425,6 +423,7 @@ public RGBTextdrawsTimer()
     if(red == 255 && green == 0 && blue != 0) {
     	blue -= 15;
     }
+    
 	
 	final_color_hex = red << 24 | green << 16 | blue << 8 | 255;
 
