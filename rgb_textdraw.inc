@@ -1,4 +1,4 @@
-// -*- coding: Western (Windows 1252) -*-
+// -*- coding: utf-8 -*-
 /* 
 	-----------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@
 
 	-----------------------------------------------------------------------------
 
-	Copyright © 2023 Adib Salehi. All rights reserved.
+	Copyright Â© 2023 Adib Salehi. All rights reserved.
 
 */
 
