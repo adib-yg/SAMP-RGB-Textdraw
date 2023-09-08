@@ -43,6 +43,7 @@
 			native RGBTextDrawHideForPlayer(playerid, Text:text);
 
 		Player Textdraw:
+
 			native AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
 			native RemoveRGBFromPlayerTextDraw(playerid, Text:text);
 			native SetRGBPlayerTextDrawInfo(playerid, Text:text, bool: color, bool: bgcolor, bool: boxcolor);
@@ -185,7 +186,8 @@ stock AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, boo
 		return print("[ERROR] AddRGBToTextDraw(...) Couldn't Add RGB To Textdraw Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
 
 	if(timer_id == -1) {
-		timer_id = SetTimer("RGBTextdrawsTimer", RGB_TDS_TIMER_INTERVAL, 1);
+		// Start timer on init first rgb textdraw
+		timer_id = SetTimer("RGBTextdrawsTimer", RGB_TDS_TIMER_INTERVAL, true);
 	}
 
 	new 
@@ -210,9 +212,12 @@ stock RemoveRGBFromTextDraw(Text:text) {
 		ret = Iter_Remove(RGB_TDs, Text: text)
 	;
 
-	if(Iter_Count(RGB_TDs) == 0) {
-		KillTimer(timer_id);
-		timer_id = -1;
+	if(timer_id != -1) {
+		if(Iter_Count(RGB_TDs) == 0 && count_player_rgb_textdraw == 0) {
+			// Stop timer if there is no rgb textdraws
+			KillTimer(timer_id);
+			timer_id = -1;
+		}
 	}
 
 	return ret;
@@ -300,7 +305,8 @@ stock AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool
 		return print("[ERROR] AddRGBToPlayerTextDraw(...) Couldn't Add RGB To Textdraw Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
 
 	if(timer_id == -1) {
-		timer_id = SetTimer("RGBTextdrawsTimer", RGB_TDS_TIMER_INTERVAL, 1);
+		// Start timer on init first rgb textdraw
+		timer_id = SetTimer("RGBTextdrawsTimer", RGB_TDS_TIMER_INTERVAL, true);
 	}
 
 	new 
@@ -335,6 +341,14 @@ stock RemoveRGBFromPlayerTextDraw(playerid, PlayerText:text) {
 	;
 
 	count_player_rgb_textdraw--;
+
+	if(timer_id != -1) {
+		if(Iter_Count(RGB_TDs) == 0 && count_player_rgb_textdraw == 0) {
+			// Stop timer if there is no rgb textdraws
+			KillTimer(timer_id);
+			timer_id = -1;
+		}
+	}
 
 	return ret;
 }
@@ -449,21 +463,22 @@ public RGBTextdrawsTimer()
 
 	/* Player RGB Textdraws */
 	if(count_player_rgb_textdraw > 0) {
- 		foreach(new i : Player)
-	 	{
-	 		foreach(new text : RGB_PlayerTDs[i]) {
+ 		foreach(new i : Player) {
+	 		if(Iter_Count(RGB_PlayerTDs[i]) > 0) {
+		 		foreach(new text : RGB_PlayerTDs[i]) {
 
-		 		if(RGB_PlayerTextDrawColor[i][_: text])
-		 			PlayerTextDrawColor(i, PlayerText: text, final_color_hex);
+			 		if(RGB_PlayerTextDrawColor[i][_: text])
+			 			PlayerTextDrawColor(i, PlayerText: text, final_color_hex);
 
-		 		if(RGB_PlayerTextDrawBGColor[i][_: text])
-		 			PlayerTextDrawBackgroundColor(i, PlayerText: text, final_color_hex);
+			 		if(RGB_PlayerTextDrawBGColor[i][_: text])
+			 			PlayerTextDrawBackgroundColor(i, PlayerText: text, final_color_hex);
 
-		 		if(RGB_PlayerTextDrawBoxColor[i][_: text])
-		 			PlayerTextDrawBoxColor(i, PlayerText: text, final_color_hex);
+			 		if(RGB_PlayerTextDrawBoxColor[i][_: text])
+			 			PlayerTextDrawBoxColor(i, PlayerText: text, final_color_hex);
 
-	 			if(RGB_PlayerTextDrawShow[i][_: text])
-	 				PlayerTextDrawShow(i, PlayerText: text);
+		 			if(RGB_PlayerTextDrawShow[i][_: text])
+		 				PlayerTextDrawShow(i, PlayerText: text);
+		 		}
 	 		}
 	 	}
 	}
@@ -535,13 +550,15 @@ public OnPlayerDisconnect(playerid, reason)
 
 	// Hide Player RGB Textdraws
 	if(count_player_rgb_textdraw > 0) {
-		foreach(new text : RGB_PlayerTDs[playerid]) {
-			RGB_PlayerTextDrawShow[playerid][_: text] = false;
-			count_player_rgb_textdraw--;
-		}
+		if(Iter_Count(RGB_PlayerTDs[playerid]) > 0) {
+			foreach(new text : RGB_PlayerTDs[playerid]) {
+				RGB_PlayerTextDrawShow[playerid][_: text] = false;
+				count_player_rgb_textdraw--;
+			}
 
-		// Clear Player Added RGB Textdraws
-		Iter_Clear(RGB_PlayerTDs[playerid]);
+			// Clear Player Added RGB Textdraws
+			Iter_Clear(RGB_PlayerTDs[playerid]);
+		}
 	}
 
 	#if defined RGBTD_OnPlayerDisconnect
