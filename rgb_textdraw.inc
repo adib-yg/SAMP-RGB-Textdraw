@@ -561,11 +561,20 @@ public OnPlayerDisconnect(playerid, reason)
 		if(Iter_Count(RGB_PlayerTDs[playerid]) > 0) {
 			foreach(new text : RGB_PlayerTDs[playerid]) {
 				RGB_PlayerTextDrawShow[playerid][_: text] = false;
+				
 				count_player_rgb_textdraw--;
 			}
 
 			// Clear Player Added RGB Textdraws
 			Iter_Clear(RGB_PlayerTDs[playerid]);
+
+			if(timer_id != -1) {
+				if(Iter_Count(RGB_TDs) == 0 && count_player_rgb_textdraw == 0) {
+					// Stop timer if there is no rgb textdraws
+					KillTimer(timer_id);
+					timer_id = -1;
+				}
+			}
 		}
 	}
 
