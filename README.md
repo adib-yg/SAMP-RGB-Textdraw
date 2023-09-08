@@ -1,5 +1,5 @@
 # SAMP-RGB-Textdraw
-rgb_textdraw.inc is an include for [sa-mp](//sa-mp.com/).
+rgb_textdraw.inc is an include for [open-mp](//open.mp/) and [sa-mp](//sa-mp.com/).
 
 You can add RGB to textdraw, textdraw colour will change smoothly.
 
