@@ -365,8 +365,10 @@ stock SetRGBPlayerTextDrawInfo(playerid, PlayerText:text, bool: color = true, bo
 
 stock RGBPlayerTextDrawShow(playerid, PlayerText:text) {
 
-	if (!Iter_Contains(RGB_PlayerTDs[playerid], _: text))
-		return PlayerTextDrawShow(playerid, text);
+	if (0 <= playerid < MAX_PLAYERS) {
+		if (!Iter_Contains(RGB_PlayerTDs[playerid], _: text))
+			return PlayerTextDrawShow(playerid, text);
+	}
 	
 	if (!(0 <= playerid < MAX_PLAYERS))
 		return print("[ERROR] RGBPlayerTextDrawShow(...) Invalid Player ID.");
@@ -379,8 +381,10 @@ stock RGBPlayerTextDrawShow(playerid, PlayerText:text) {
 
 stock RGBPlayerTextDrawHide(playerid, PlayerText:text) {
 
-	if (!Iter_Contains(RGB_PlayerTDs[playerid], _: text))
-		return PlayerTextDrawHide(playerid, text);
+	if (0 <= playerid < MAX_PLAYERS) {
+		if (!Iter_Contains(RGB_PlayerTDs[playerid], _: text))
+			return PlayerTextDrawHide(playerid, text);
+	}
 
 	if (!(0 <= playerid < MAX_PLAYERS))
 		return print("[ERROR] RGBPlayerTextDrawHide(...) Invalid Player ID.");
