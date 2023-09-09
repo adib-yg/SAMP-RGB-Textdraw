@@ -67,6 +67,8 @@ public OnPlayerConnect(playerid) {
 }
 ```
 
+Note: If the textdraw string contains colors `(~r~ ~y~ ...)` it will have no effect, so remove them.
+
 # Credits
 * adib_yg for the include.
 * [Y_Less](//github.com/Y-Less/) for [YSI-Includes](https://github.com/pawn-lang/YSI-Includes).
