@@ -46,7 +46,6 @@ public OnPlayerConnect(playerid) {
 	// Show the global textdraw `MyTextDraw_1` for the playerid
 	TextDrawShowForPlayer(playerid, MyTextDraw_1);
 	
-	/* Below Is Example Of Use RGB PlayerTextDraw */
 	// Create a player textdraw
 	MyPlayerTextDraw_1[playerid] = CreatePlayerTextDraw(playerid, 570.396240, 132.500198, "Hello World!");
 	PlayerTextDrawLetterSize(playerid, MyPlayerTextDraw_1[playerid], 0.534999, 1.634999);
