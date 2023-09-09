@@ -72,18 +72,18 @@ Note: If the textdraw string contains colors `(~r~ ~y~ ...)` it will have no eff
 # Functions
 ```pawn
 //Global Textdraw:
-	native AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
-	native RemoveRGBFromTextDraw(Text:text);
-	native SetRGBTextDrawInfo(Text:text, bool: color, bool: bgcolor, bool: boxcolor);
-	native RGBTextDrawShowForPlayer(playerid, Text:text);
-	native RGBTextDrawHideForPlayer(playerid, Text:text);
-	
+native AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
+native RemoveRGBFromTextDraw(Text:text);
+native SetRGBTextDrawInfo(Text:text, bool: color, bool: bgcolor, bool: boxcolor);
+native RGBTextDrawShowForPlayer(playerid, Text:text);
+native RGBTextDrawHideForPlayer(playerid, Text:text);
+
 //Player Textdraw:
-	native AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
-	native RemoveRGBFromPlayerTextDraw(playerid, Text:text);
-	native SetRGBPlayerTextDrawInfo(playerid, Text:text, bool: color, bool: bgcolor, bool: boxcolor);
-	native RGBPlayerTextDrawShow(playerid, PlayerText:text);
-	native RGBPlayerTextDrawHide(playerid, PlayerText:text);
+native AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
+native RemoveRGBFromPlayerTextDraw(playerid, Text:text);
+native SetRGBPlayerTextDrawInfo(playerid, Text:text, bool: color, bool: bgcolor, bool: boxcolor);
+native RGBPlayerTextDrawShow(playerid, PlayerText:text);
+native RGBPlayerTextDrawHide(playerid, PlayerText:text);
 ```
 
 # Credits
