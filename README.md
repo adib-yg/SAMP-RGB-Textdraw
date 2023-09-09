@@ -3,7 +3,9 @@ rgb_textdraw.inc is an include for [open-mp](//open.mp/) and [sa-mp](//sa-mp.com
 
 You can add RGB to textdraw, textdraw colour will change smoothly.
 
-![Alt Text](gif_rgb_textdraw.gif)
+![Alt Text](gif_rgb_textdraw_1.gif)
+
+![Alt Text](gif_rgb_textdraw_2.gif)
 
 # How To Install
 1. Extract the rgb_textdraw.inc into the `/pawno/include` directory of your SA-MP server.
