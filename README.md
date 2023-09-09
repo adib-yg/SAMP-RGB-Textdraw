@@ -37,7 +37,7 @@ public OnGameModeInit()
 	TextDrawBackgroundColor(MyTextDraw_1, 255);
 	TextDrawFont(MyTextDraw_1, 1);
 	TextDrawSetProportional(MyTextDraw_1, 1);
-
+	
 	// Add RGB to global textdraw `MyTextDraw_1`
 	AddRGBToTextDraw(MyTextDraw_1, .color = false, .bgcolor = false, .boxcolor = true); // boxcolor only
 }
@@ -45,7 +45,7 @@ public OnGameModeInit()
 public OnPlayerConnect(playerid) {
 	// Show the global textdraw `MyTextDraw_1` for the playerid
 	TextDrawShowForPlayer(playerid, MyTextDraw_1);
-
+	
 	/* Below Is Example Of Use RGB PlayerTextDraw */
 	// Create a player textdraw
 	MyPlayerTextDraw_1[playerid] = CreatePlayerTextDraw(playerid, 570.396240, 132.500198, "Hello World!");
@@ -58,16 +58,33 @@ public OnPlayerConnect(playerid) {
 	PlayerTextDrawBackgroundColor(playerid, MyPlayerTextDraw_1[playerid], 255);
 	PlayerTextDrawFont(playerid, MyPlayerTextDraw_1[playerid], 0);
 	PlayerTextDrawSetProportional(playerid, MyPlayerTextDraw_1[playerid], 1);
-
+	
 	// Add RGB to player textdraw `MyPlayerTextDraw_1`
 	AddRGBToPlayerTextDraw(playerid, MyPlayerTextDraw_1[playerid], .color = true);
-
+	
 	// Show the player textdraw `MyPlayerTextDraw_1` for the playerid
 	PlayerTextDrawShow(playerid, MyPlayerTextDraw_1[playerid]);
 }
 ```
 
 Note: If the textdraw string contains colors `(~r~ ~y~ ...)` it will have no effect, so remove them.
+
+# Functions
+```pawn
+//Global Textdraw:
+	native AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
+	native RemoveRGBFromTextDraw(Text:text);
+	native SetRGBTextDrawInfo(Text:text, bool: color, bool: bgcolor, bool: boxcolor);
+	native RGBTextDrawShowForPlayer(playerid, Text:text);
+	native RGBTextDrawHideForPlayer(playerid, Text:text);
+	
+//Player Textdraw:
+	native AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
+	native RemoveRGBFromPlayerTextDraw(playerid, Text:text);
+	native SetRGBPlayerTextDrawInfo(playerid, Text:text, bool: color, bool: bgcolor, bool: boxcolor);
+	native RGBPlayerTextDrawShow(playerid, PlayerText:text);
+	native RGBPlayerTextDrawHide(playerid, PlayerText:text);
+```
 
 # Credits
 * adib_yg for the include.
