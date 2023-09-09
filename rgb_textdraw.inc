@@ -1,10 +1,29 @@
 // -*- coding: utf-8 -*-
 /* 
-	                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+	Legal:
+		Version: MPL 1.1
+		
+		The contents of this file are subject to the Mozilla Public License Version 
+		1.1 the "License"; you may not use this file except in compliance with 
+		the License. You may obtain a copy of the License at 
+		http://www.mozilla.org/MPL/
+		
+		Software distributed under the License is distributed on an "AS IS" basis,
+		WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+		for the specific language governing rights and limitations under the
+		License.
 
-	  The GNU General Public License is a free, copyleft license for
-	software and other kinds of works.
+		The Original Code is the RGB Textdraw SA:MP Include.
+		
+		The Initial Developer of the Original Code is Adib "adib_yg".
+		Portions created by the Initial Developer are Copyright (c) 2023
+		the Initial Developer. All Rights Reserved.
+
+	Contributor(s):
+		-
+
+	Special Thanks to:
+		Y_Less for YSI-Includes.
 
 	-----------------------------------------------------------------------------
 
@@ -110,9 +129,6 @@
 		Change 'RGB_TDS_TIMER_INTERVAL' to change the rgb timer time
 
 	-----------------------------------------------------------------------------
-
-	Copyright © 2023 Adib. All rights reserved.
-
 */
 
 // -----------------------------------------------------------------------------
