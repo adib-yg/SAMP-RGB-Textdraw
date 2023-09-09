@@ -67,7 +67,7 @@ public OnPlayerConnect(playerid) {
 }
 ```
 
-Note: If the textdraw string contains colors `(~r~ ~y~ ...)` it will have no effect, so remove them.
+Note: If the textdraw string contain colors `(~r~ ~y~ ...)` it will have no effect, so remove them.
 
 # Functions
 ```pawn
