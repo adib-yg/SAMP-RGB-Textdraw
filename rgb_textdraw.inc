@@ -64,8 +64,8 @@
 		Player Textdraw:
 
 			native AddRGBToPlayerTextDraw(playerid, PlayerText:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
-			native RemoveRGBFromPlayerTextDraw(playerid, Text:text);
-			native SetRGBPlayerTextDrawInfo(playerid, Text:text, bool: color, bool: bgcolor, bool: boxcolor);
+			native RemoveRGBFromPlayerTextDraw(playerid, PlayerText:text);
+			native SetRGBPlayerTextDrawInfo(playerid, PlayerText:text, bool: color, bool: bgcolor, bool: boxcolor);
 			native RGBPlayerTextDrawShow(playerid, PlayerText:text);
 			native RGBPlayerTextDrawHide(playerid, PlayerText:text);
 
