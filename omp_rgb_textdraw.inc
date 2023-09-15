@@ -247,6 +247,9 @@ stock SetRGBTextDrawInfo(Text:text, bool: color = true, bool: bgcolor = false, b
 	if (Text: text == INVALID_TEXT_DRAW)
 		return print("[ERROR] SetRGBTextDrawInfo(...) Invalid Textdraw ID.");
 
+	if (!Iter_Contains(RGB_TDs, Text: text))
+		return 0;
+
 	if (!color && !bgcolor && !boxcolor)
 		return print("[ERROR] SetRGBTextDrawInfo(...) Couldn't Set RGB Textdraw Info Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
 
@@ -371,6 +374,9 @@ stock SetRGBPlayerTextDrawInfo(playerid, PlayerText:text, bool: color = true, bo
 
 	if (PlayerText: text == INVALID_PLAYER_TEXT_DRAW)
 		return print("[ERROR] SetRGBPlayerTextDrawInfo(...) Invalid Textdraw ID.");
+
+	if (!Iter_Contains(RGB_PlayerTDs[playerid], PlayerText: text))
+		return 0;
 
 	if (!color && !bgcolor && !boxcolor)
 		return print("[ERROR] SetRGBPlayerTextDrawInfo(...) Couldn't Set RGB Textdraw Info Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
