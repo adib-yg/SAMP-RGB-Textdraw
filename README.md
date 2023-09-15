@@ -8,8 +8,13 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 ![Alt Text](gif_rgb_textdraw_2.gif)
 
 # How To Install
+**SA-MP**
 1. Extract the rgb_textdraw.inc into the `/pawno/include` directory of your SA-MP server.
-2. Import include in your gamemode script `#include <rgb_textdraw>` or if you use open.mp `#include <omp_rgb_textdraw>`
+2. Import include in your gamemode script `#include <rgb_textdraw>`
+
+**OPEN.MP**
+1. Extract the omp_rgb_textdraw.inc into the `/qawno/include` directory of your OPEN.MP server.
+2. Import include in your gamemode script `#include <omp_rgb_textdraw>`
 
 Note: You have to import `#include <YSI_Data\y_iterate>` or `#include <foreach>` for use this include
 
