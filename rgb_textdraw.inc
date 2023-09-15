@@ -448,25 +448,13 @@ public RGBTextdrawsTimer()
 	if(Iter_Count(RGB_TDs) > 0) {
 		foreach(new text : RGB_TDs) {
 	 		if(RGB_TextDrawColor[_: text])
-	 			#if defined _INC_open_mp
-	 				TextDrawColour(Text: text, final_color_hex);
-	 			#else
-	 				TextDrawColor(Text: text, final_color_hex);
-	 			#endif
+	 			TextDrawColor(Text: text, final_color_hex);
 
 	 		if(RGB_TextDrawBGColor[_: text])
-	 			#if defined _INC_open_mp
-	 				TextDrawBackgroundColour(Text: text, final_color_hex);
-	 			#else
-	 				TextDrawBackgroundColor(Text: text, final_color_hex);
-	 			#endif
+	 			TextDrawBackgroundColor(Text: text, final_color_hex);
 
 	 		if(RGB_TextDrawBoxColor[_: text])
-	 			#if defined _INC_open_mp
-	 				TextDrawBoxColour(Text: text, final_color_hex);
-	 			#else
-	 				TextDrawBoxColor(Text: text, final_color_hex);
-	 			#endif
+	 			TextDrawBoxColor(Text: text, final_color_hex);
 
 	 		foreach(new i : RGB_TDs_Show[_: text]) 
 	 			TextDrawShowForPlayer(i, Text: text);
@@ -480,25 +468,13 @@ public RGBTextdrawsTimer()
 		 		foreach(new text : RGB_PlayerTDs[i]) {
 
 			 		if(RGB_PlayerTextDrawColor[i][_: text])
-			 			#if defined _INC_open_mp
-			 				PlayerTextDrawColour(i, PlayerText: text, final_color_hex);
-			 			#else
-			 				PlayerTextDrawColor(i, PlayerText: text, final_color_hex);
-			 			#endif
+			 			PlayerTextDrawColor(i, PlayerText: text, final_color_hex);
 
 			 		if(RGB_PlayerTextDrawBGColor[i][_: text])
-			 			#if defined _INC_open_mp
-			 				PlayerTextDrawBackgroundColour(i, PlayerText: text, final_color_hex);
-			 			#else
-			 				PlayerTextDrawBackgroundColor(i, PlayerText: text, final_color_hex);
-			 			#endif
+			 			PlayerTextDrawBackgroundColor(i, PlayerText: text, final_color_hex);
 
 			 		if(RGB_PlayerTextDrawBoxColor[i][_: text])
-			 			#if defined _INC_open_mp
-			 				PlayerTextDrawBoxColour(i, PlayerText: text, final_color_hex);
-			 			#else
-			 				PlayerTextDrawBoxColor(i, PlayerText: text, final_color_hex);
-			 			#endif
+			 			PlayerTextDrawBoxColor(i, PlayerText: text, final_color_hex);
 
 		 			if(RGB_PlayerTextDrawShow[i][_: text])
 		 				PlayerTextDrawShow(i, PlayerText: text);
