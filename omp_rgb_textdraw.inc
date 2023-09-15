@@ -28,7 +28,7 @@
 	-----------------------------------------------------------------------------
 
 	***
-		This include file (omp_rgb_textdraw.inc) is only compatible with OPEN.MP
+		This include file (omp_rgb_textdraw.inc) is only compatible with OPEN.MP 
 
 	Author:
 		Adib
