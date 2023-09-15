@@ -26,6 +26,9 @@
 		Y_Less for YSI-Includes.
 
 	-----------------------------------------------------------------------------
+	
+	***
+		This include file (rgb_textdraw.inc) is only compatible with SA-MP
 
 	Author:
 		Adib
@@ -221,11 +224,11 @@ stock RemoveRGBFromTextDraw(Text:text) {
 	if (Text: text == Text: 0xFFFF)
 		return print("[ERROR] RemoveRGBFromTextDraw(...) Invalid Textdraw ID.");
 
-	if (!Iter_Contains(RGB_TDs, Text: text))
+	if (!Iter_Contains(RGB_TDs, _: text))
 		return print("[ERROR] RemoveRGBFromTextDraw(...) Couldn't Remove RGB From Textdraw Because This Textdraw Is Not Have RGB.");
 
 	new 
-		ret = Iter_Remove(RGB_TDs, Text: text)
+		ret = Iter_Remove(RGB_TDs, _: text)
 	;
 
 	if(timer_id != -1) {
@@ -244,12 +247,15 @@ stock SetRGBTextDrawInfo(Text:text, bool: color = true, bool: bgcolor = false, b
 	if (Text: text == Text: 0xFFFF)
 		return print("[ERROR] SetRGBTextDrawInfo(...) Invalid Textdraw ID.");
 
+	if (!Iter_Contains(RGB_TDs, _: text))
+		return 0;
+
 	if (!color && !bgcolor && !boxcolor)
 		return print("[ERROR] SetRGBTextDrawInfo(...) Couldn't Set RGB Textdraw Info Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
 
-	RGB_TextDrawColor[Text: text] = color;
-	RGB_TextDrawBGColor[Text: text] = bgcolor;
-	RGB_TextDrawBoxColor[Text: text] = boxcolor;
+	RGB_TextDrawColor[_: text] = color;
+	RGB_TextDrawBGColor[_: text] = bgcolor;
+	RGB_TextDrawBoxColor[_: text] = boxcolor;
 
 	return 1;
 }
@@ -368,6 +374,9 @@ stock SetRGBPlayerTextDrawInfo(playerid, PlayerText:text, bool: color = true, bo
 
 	if (PlayerText: text == PlayerText: 0xFFFF)
 		return print("[ERROR] SetRGBPlayerTextDrawInfo(...) Invalid Textdraw ID.");
+
+	if (!Iter_Contains(RGB_PlayerTDs[playerid], _: text))
+		return 0;
 
 	if (!color && !bgcolor && !boxcolor)
 		return print("[ERROR] SetRGBPlayerTextDrawInfo(...) Couldn't Set RGB Textdraw Info Because 'color', 'bgcolor' and 'boxcolor' is FALSE.");
