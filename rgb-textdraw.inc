@@ -28,7 +28,7 @@
 	-----------------------------------------------------------------------------
 	
 	***
-		This include file (rgb_textdraw.inc) is only compatible with SA-MP
+		This include file (rgb-textdraw.inc) is only compatible with SA-MP
 
 	Author:
 		Adib
@@ -78,7 +78,7 @@
 
 		#include <YSI_Data\y_iterate> or #include <foreach>
 
-		#include <rgb_textdraw>
+		#include <rgb-textdraw>
 
 		new Text: MyTextDraw_1;
 
@@ -126,7 +126,7 @@
 	-----------------------------------------------------------------------------
 
 	*** 
-		Please #include <YSI_Data\y_iterate> before using rgb_textdraw include
+		Please #include <YSI_Data\y_iterate> before using rgb-textdraw include
 
 	***
 		Change 'RGB_TDS_TIMER_INTERVAL' to change the rgb timer time
@@ -147,7 +147,7 @@
 
 #if !defined _INC_y_iterate
 	#if !defined Iter_Add // if  #include <foreach>  is not included also
-		#error "y_iterate is missing! Add #include <YSI_Data\y_iterate> before using rgb_textdraw include"
+		#error "y_iterate is missing! Add #include <YSI_Data\y_iterate> before using rgb-textdraw include"
 	#endif
 #endif
 
