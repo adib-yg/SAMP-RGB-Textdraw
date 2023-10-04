@@ -9,7 +9,7 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 
 ![Alt Text](gif_rgb_textdraw_2.gif)
 
-# How To Install
+## How To Install
 **SA-MP**
 1. Extract the rgb-textdraw.inc into the `/pawno/include` directory of your SA-MP server.
 2. Import include in your gamemode script `#include <rgb-textdraw>`
@@ -20,7 +20,7 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 
 Note: You have to import `#include <YSI_Data\y_iterate>` or `#include <foreach>` for use this include
 
-# How To Use
+## How To Use
 ```pawn
 // Import includes
 #include <YSI_Data\y_iterate>
@@ -75,7 +75,7 @@ public OnPlayerConnect(playerid) {
 
 Note: If the textdraw string contain colors `(~r~ ~y~ ...)` it will have no effect, so remove them.
 
-# Functions
+## Functions
 ```pawn
 //Global Textdraw:
 native AddRGBToTextDraw(Text:text, bool: color = true, bool: bgcolor = false, bool: boxcolor = false);
@@ -92,6 +92,6 @@ native RGBPlayerTextDrawShow(playerid, PlayerText:text);
 native RGBPlayerTextDrawHide(playerid, PlayerText:text);
 ```
 
-# Credits
+## Credits
 * adib_yg for the include.
 * [Y_Less](//github.com/Y-Less/) for [YSI-Includes](https://github.com/pawn-lang/YSI-Includes).
