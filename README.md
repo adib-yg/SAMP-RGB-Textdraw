@@ -1,4 +1,6 @@
 # SAMP-RGB-Textdraw
+[![sampctl](https://img.shields.io/badge/sampctl-SAMP--RGB--Textdraw-2f2f2f.svg?style=for-the-badge)](https://github.com/adib-yg/SAMP-RGB-Textdraw)
+
 rgb-textdraw.inc is an include for [open-mp](//open.mp/) and [sa-mp](//sa-mp.com/).
 
 You can add RGB to textdraw, textdraw colour will change smoothly.
