@@ -15,6 +15,8 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 sampctl package install adib-yg/SAMP-RGB-Textdraw
 ```
 
+*Manually:*
+
 **SA-MP**
 1. Extract the rgb-textdraw.inc into the `/pawno/include` directory of your SA-MP server.
 2. Import include in your gamemode script `#include <rgb-textdraw>`
