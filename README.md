@@ -1,5 +1,5 @@
 # SAMP-RGB-Textdraw
-rgb_textdraw.inc is an include for [open-mp](//open.mp/) and [sa-mp](//sa-mp.com/).
+rgb-textdraw.inc is an include for [open-mp](//open.mp/) and [sa-mp](//sa-mp.com/).
 
 You can add RGB to textdraw, textdraw colour will change smoothly.
 
@@ -9,12 +9,12 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 
 # How To Install
 **SA-MP**
-1. Extract the rgb_textdraw.inc into the `/pawno/include` directory of your SA-MP server.
-2. Import include in your gamemode script `#include <rgb_textdraw>`
+1. Extract the rgb-textdraw.inc into the `/pawno/include` directory of your SA-MP server.
+2. Import include in your gamemode script `#include <rgb-textdraw>`
 
 **OPEN.MP**
-1. Extract the omp_rgb_textdraw.inc into the `/qawno/include` directory of your OPEN.MP server.
-2. Import include in your gamemode script `#include <omp_rgb_textdraw>`
+1. Extract the omp-rgb-textdraw.inc into the `/qawno/include` directory of your OPEN.MP server.
+2. Import include in your gamemode script `#include <omp-rgb-textdraw>`
 
 Note: You have to import `#include <YSI_Data\y_iterate>` or `#include <foreach>` for use this include
 
@@ -22,7 +22,7 @@ Note: You have to import `#include <YSI_Data\y_iterate>` or `#include <foreach>`
 ```pawn
 // Import includes
 #include <YSI_Data\y_iterate>
-#include <rgb_textdraw>
+#include <rgb-textdraw>
 
 // Defining textdraw variables
 new Text: MyTextDraw_1;
