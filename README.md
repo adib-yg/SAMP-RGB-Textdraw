@@ -12,7 +12,7 @@ You can add RGB to textdraw, textdraw colour will change smoothly.
 ## How To Install
 **sampctl**
 ```bash
-sampctl package install adib-yg/SAMP-RGB-Textdraw
+sampctl install adib-yg/SAMP-RGB-Textdraw
 ```
 
 *Manually:*
